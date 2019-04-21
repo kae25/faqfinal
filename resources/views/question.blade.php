@@ -13,10 +13,9 @@
                     </div>
                     <div class="card-footer">
                         <a class="btn btn-primary float-right"
-                           href="#">
+                           href="3">
                             Edit Question
                         </a>
-
                     </div>
                 </div>
             </div>
@@ -29,9 +28,9 @@
                         </a></div>
 
                     <div class="card-body">
-                        @forelse($question->answers as $answer)
+
                             <div class="card">
-                                <div class="card-body">{{$answer->body}}</div>
+                                <div class="card-body"></div>
                                 <div class="card-footer">
 
                                     <a class="btn btn-primary float-right"
@@ -41,12 +40,7 @@
 
                                 </div>
                             </div>
-                        @empty
-                            <div class="card">
 
-                                <div class="card-body"> No Answers</div>
-                            </div>
-                        @endforelse
 
 
                     </div>
