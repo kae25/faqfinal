@@ -30,7 +30,9 @@
                     <div class="card-body">
 
                             <div class="card">
-                                <div class="card-body"></div>
+
+
+                                <div class="card-body"> No Answers</div>
                                 <div class="card-footer">
 
                                     <a class="btn btn-primary float-right"
