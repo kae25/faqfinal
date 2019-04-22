@@ -30,11 +30,7 @@
                                             <div class="card-footer">
                                                 <p class="card-text">
 
-<<<<<<< .merge_file_grwtjM
-                                                    <a class="btn btn-primary float-right" href="{{ route('question.show', ['id' => $question->id]) }}">
-=======
                                                     <a class="btn btn-primary float-right" href="{{ route('questions.show', ['id' => $question->id]) }}">
->>>>>>> .merge_file_7nvTbM
                                                         View
                                                     </a>
                                                 </p>
