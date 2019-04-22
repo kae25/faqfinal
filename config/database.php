@@ -88,6 +88,7 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
         ],
+
         'pg-heroku' => [
             'driver' => 'pgsql',
             'host' => $heroku_db_url['host'],
@@ -98,6 +99,7 @@ return [
             'prefix' => '',
             'schema' => 'public',
         ],
+
     ],
 
     /*
