@@ -1,12 +1,15 @@
 @extends('layouts.app')
 
+
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">Questions
-
+                        <a class="btn btn-primary float-right" href="{{ route('questions.create') }}">
+                            Create a Question
+                        </a>
 
                         <div class="card-body">
 
@@ -27,7 +30,11 @@
                                             <div class="card-footer">
                                                 <p class="card-text">
 
+<<<<<<< .merge_file_grwtjM
                                                     <a class="btn btn-primary float-right" href="{{ route('question.show', ['id' => $question->id]) }}">
+=======
+                                                    <a class="btn btn-primary float-right" href="{{ route('questions.show', ['id' => $question->id]) }}">
+>>>>>>> .merge_file_7nvTbM
                                                         View
                                                     </a>
                                                 </p>
