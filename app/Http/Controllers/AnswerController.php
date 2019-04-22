@@ -48,7 +48,7 @@ class AnswerController extends Controller
         $Answer->user()->associate(Auth::user());
         $Answer->question()->associate($question);
         $Answer->save();
-        return redirect()->route('questions.show',['question_id' => $question->id])->with('message', 'Saved');
+        return redirect()->route('question.show',['question_id' => $question->id])->with('message', 'Saved');
     }
     /**
      * Display the specified resource.
@@ -104,6 +104,6 @@ class AnswerController extends Controller
     {
         $answer = Answer::find($answer);
         $answer->delete();
-        return redirect()->route('questions.show',['question_id' => $question])->with('message', 'Delete');
+        return redirect()->route('question.show',['question_id' => $question])->with('message', 'Delete');
     }
 }
