@@ -1,11 +1,8 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Question;
 use Illuminate\Support\Facades\Auth;
-
 class QuestionController extends Controller
 {
     public function __construct()
@@ -51,7 +48,7 @@ class QuestionController extends Controller
         $question->user()->associate(Auth::user());
         $question->save();
         return redirect()->route('home')->with('message', 'IT WORKS!');
-        // return redirect()->route('questions.show', ['id' => $question->id]);
+         //return redirect()->route('question.show', ['id' => $question->id]);
     }
     /**
      * Display the specified resource.
@@ -91,7 +88,7 @@ class QuestionController extends Controller
         ]);
         $question->body = $request->body;
         $question->save();
-        return redirect()->route('questions.show',['question_id' => $question->id])->with('message', 'Saved');
+        return redirect()->route('question.show',['question_id' => $question->id])->with('message', 'Saved');
     }
     /**
      * Remove the specified resource from storage.
