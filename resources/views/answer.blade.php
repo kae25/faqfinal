@@ -19,6 +19,10 @@
                             Edit Answer
                         </a>
 
+                        <button type="button" id="testBtn" class="btn btn-success glyphicon glyphicon-thumbs-up" data-loading-text=" ... ">
+                            2</button>
+                        <button type="button" id="testBtnDown" class="btn btn-success glyphicon glyphicon-thumbs-down" data-loading-text=" ... ">
+                            3</button>
 
 
                     </div>
