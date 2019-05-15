@@ -16,3 +16,5 @@ $('#testBtnDown').click(function () {
         btn.text('  ' + cnt);
     }, 1000);
 });
+
+$('.file-upload').file_upload();

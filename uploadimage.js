@@ -26,8 +26,8 @@ $(document).ready(function (e) {
         $('#loading').show();
 
         $.ajax({
-            url: "upload-image.php",
-            type: "GET",
+            url: "upload.image.php",
+            type: "POST",
             data: new FormData(this),
             contentType: false,
             cache: false,
