@@ -54,7 +54,7 @@
                                             $(window).load(function(){<!--   w  w w .  j a v  a  2s  .  c  om-->
                                                 $(document).ready(function () {
                                                     $('#testBtn').click(function () {
-                                                        var cnt=11;
+                                                        var cnt=0;
                                                         var btn = $(this);
                                                         btn.button('loading');
                                                         setTimeout(function () {
@@ -65,13 +65,11 @@
                                                     });
 
                                                     $('#testBtnDown').click(function () {
-                                                        var cnt=3;
+                                                        var cnt=0;
                                                         var btn = $(this);
                                                         btn.button('loading');
                                                         setTimeout(function () {
-                                                            if (cnt > 0) {
-                                                                cnt--;
-                                                            }
+                                                            cnt++;
                                                             btn.button('reset');
                                                             btn.text('  ' + cnt);
                                                         }, 1000);
@@ -82,9 +80,9 @@
                                     </head>
                                     <body>
                                     <button type="button" id="testBtn" class="btn btn-success glyphicon glyphicon-thumbs-up" data-loading-text=" ... ">
-                                        11</button>
+                                        0</button>
                                     <button type="button" id="testBtnDown" class="btn btn-success glyphicon glyphicon-thumbs-down" data-loading-text=" ... ">
-                                        3</button>
+                                        0</button>
                                     </body>
                                     </html>
                                 </div>
