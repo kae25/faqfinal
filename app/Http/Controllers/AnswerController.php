@@ -108,3 +108,4 @@ class AnswerController extends Controller
         return redirect()->route('question.show',['question_id' => $question])->with('message', 'Delete');
     }
 }
+

@@ -38,18 +38,16 @@
                                 <div class="card-body">{{$answer->body}}</div>
                                 <div class="card-footer">
 
+                                    <a class="btn btn-primary float-right"
+                                       href="{{ route('answers.show', ['question_id'=> $question->id,'answer_id' => $answer->id]) }}">
+                                        View
+                                    </a>
                                     <button type="button" id="testBtn" class="btn btn-success" data-loading-text=" ... ">
                                         <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
                                         0</button>
                                     <button type="button" id="testBtnDown" class="btn btn-success" data-loading-text=" ... ">
                                         <span class="glyphicon glyphicon-thumbs-down"></span>
                                         1</button>
-
-                                    <a class="btn btn-primary float-right"
-                                       href="{{ route('answers.show', ['question_id'=> $question->id,'answer_id' => $answer->id]) }}">
-                                        View
-                                    </a>
-
                                 </div>
                             </div>
                         @empty
