@@ -9,6 +9,7 @@ if ( isset($_FILES["file"]["type"]) )
     $file_extension = end($temporary);
 
 
+
     if ( (($_FILES["file"]["type"] == "image/png") ||
             ($_FILES["file"]["type"] == "image/jpg") ||
             ($_FILES["file"]["type"] == "image/jpeg")
@@ -33,7 +34,7 @@ if ( isset($_FILES["file"]["type"]) )
                     move_uploaded_file($sourcePath, $targetPath);
                     echo "<div class=\"alert alert-success\" role=\"alert\">";
                     echo "<p>Image uploaded successful</p>";
-                    echo "<p>File Name: <a href=\"". $targetPath . "\"><strong>" . $targetPath . "</strong></a></p>";
+                    echo "<p>File Name: <a href=". $targetPath . "<strong>" . $targetPath . "</strong></p>";
                     echo "<p>Type: <strong>" . $_FILES["file"]["type"] . "</strong></p>";
                     echo "<p>Size: <strong>" . round($_FILES["file"]["size"]/1024, 2) . " kB</strong></p>";
                     echo "<p>Temp file: <strong>" . $_FILES["file"]["tmp_name"] . "</strong></p>";

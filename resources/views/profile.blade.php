@@ -2,20 +2,19 @@
 
 @section('content')
 
-
     <link rel="icon" href="http://getbootstrap.com/favicon.ico">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-    <style>body { padding-top:50px; }.navbar-inverse .navbar-nav > li > a { color: #DBE4E1; }</style>
+
 
     <div class="container">
-        <div class="col-md-12">
-        <div class="card">
-        <div style="max-width: 650px; margin: auto;">
+
+        <div class="card float-left mr-3">
+        <div style="max-width: 680px; margin: auto;">
             <h3 class="page-header">Profile Picture</h3>
             <p class="lead">Select a PNG or JPEG image, having maximum size <span id="max-size"></span> KB.</p>
 
-            <form id="upload-image-form" action="" method="POST" enctype="multipart/form-data">
+            <form id="upload-image-form" action="" method="post" enctype="multipart/form-data">
                 <div id="image-preview-div" style="display: none">
                     <label for="exampleInputFile">Selected image:</label>
                     <br>
@@ -37,6 +36,7 @@
             </div>
             <div id="message"></div>
         </div>
+
         </div>
         </div>
 
@@ -44,6 +44,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="/uploadimage.js"></script>
     <script>
 
         function noPreview() {
@@ -120,6 +121,8 @@
                 reader.readAsDataURL(this.files[0]);
 
             });
+
+
 
         });
 
