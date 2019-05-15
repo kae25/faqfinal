@@ -6,7 +6,7 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-12">
+            <div class="col-md-15">
                 <div class="card">
                     <div class="card-header">Answer</div>
                     <div class="card-body">
@@ -15,15 +15,15 @@
                     <div class="card-footer">
 
                         {{ Form::open(['method'  => 'DELETE', 'route' => ['answers.destroy', $question, $answer->id]])}}
-                        <button class="btn btn-danger float-right mr-2" value="submit" type="submit" id="submit">Delete
+                        <button class="btn btn-danger float-right" value="submit" type="submit" id="submit">Delete
                         </button>
+<br>
                         {!! Form::close() !!}
                         <a class="btn btn-primary float-right" href="{{ route('answers.edit',['question_id'=> $question, 'answer_id'=> $answer->id, ])}}">
                             Edit Answer
                         </a>
 
                       <html>
-                        <head>
                             <script type='text/javascript'
                                     src='http://code.jquery.com/jquery-1.9.1.js'></script>
                             <link rel="stylesheet" type="text/css"
@@ -59,9 +59,8 @@
                                     });
                                 });//]]>
                             </script>
-                        </head>
-                        <body>
-                        <button type="button" id="testBtn" class="btn btn-success glyphicon glyphicon-thumbs-up" data-loading-text=" ... ">
+<body>
+                        <button type="button" id="testBtn" class="btn btn-success glyphicon glyphicon-thumbs-up float-left" data-loading-text=" ... ">
                             1</button>
                         <button type="button" id="testBtnDown" class="btn btn-success glyphicon glyphicon-thumbs-down" data-loading-text=" ... ">
                             2</button>
