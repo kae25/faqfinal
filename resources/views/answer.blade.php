@@ -2,11 +2,9 @@
 
 @section('content')
 
-
-
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-15">
+            <div class="col-md-4">
                 <div class="card">
                     <div class="card-header">Answer</div>
                     <div class="card-body">
@@ -31,7 +29,7 @@
                             <script type='text/javascript'
                                     src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
                             <script type='text/javascript'>//<![CDATA[
-                                $(window).load(function(){<!--   w  w w .  j a v  a  2s  .  c  om-->
+                                $(window).load(function(){
                                     $(document).ready(function () {
                                         $('#testBtn').click(function () {
                                             var cnt=2;
@@ -72,7 +70,6 @@
 
             </div>
         </div>
-    </div>
 
 @endsection
 

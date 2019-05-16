@@ -1,11 +1,14 @@
 <?php
+
 session_start();
+
 if ( isset($_FILES["file"]["type"]) )
 {
-    $max_size = 500 * 1024; // 500 KB
-    $destination_directory = "upload/";
+    $max_size = 500 * 1024;
+    $destination_directory = "/public/upload/uploaded";
     $validextensions = array("jpeg", "jpg", "png");
-    $temporary = explode(".", $_FILES["file"]["name"]);
+
+    $temporary = explode(".", $_FILES["file"]["tmp_name"]);
     $file_extension = end($temporary);
 
 
@@ -21,16 +24,10 @@ if ( isset($_FILES["file"]["type"]) )
             {
                 echo "<div class=\"alert alert-danger\" role=\"alert\">Error: <strong>" . $_FILES["file"]["error"] . "</strong></div>";
             }
-            else
-            {
-                if ( file_exists($destination_directory . $_FILES["file"]["name"]) )
-                {
-                    echo "<div class=\"alert alert-danger\" role=\"alert\">Error: File <strong>" . $_FILES["file"]["name"] . "</strong> already exists.</div>";
-                }
                 else
                 {
-                    $sourcePath = $_FILES["file"]["tmp_name"];
-                    $targetPath = $destination_directory . $_FILES["file"]["name"];
+                    $sourcePath = $_FILES["file"]["name"];
+                    $targetPath = $destination_directory . $_FILES["image"]["tmp_name"];
                     move_uploaded_file($sourcePath, $targetPath);
 
                     echo "<div class=\"alert alert-success\" role=\"alert\">";
@@ -55,83 +52,3 @@ if ( isset($_FILES["file"]["type"]) )
 }
 ?>
 
-<script>
-
-    function noPreview() {
-        $('#image-preview-div').css("display", "none");
-        $('#preview-img').attr('src', 'noimage');
-        $('upload-button').attr('disabled', '');
-    }
-
-    function selectImage(e) {
-        $('#file').css("color", "green");
-        $('#image-preview-div').css("display", "block");
-        $('#preview-img').attr('src', e.target.result);
-        $('#preview-img').css('max-width', '550px');
-    }
-
-    $(document).ready(function (e) {
-
-        var maxsize = 500 * 1024;
-
-        $('#max-size').html((maxsize/1024).toFixed(2));
-
-        $('#upload-image-form').on('submit', function(e) {
-
-            e.preventDefault();
-
-            $('#message').empty();
-            $('#loading').show();
-
-            $.ajax({
-                url: "upload-image.php",
-                type: "POST",
-                data: new FormData(this),
-                contentType: false,
-                cache: false,
-                processData: false,
-                success: function(data)
-                {
-                    $('#loading').hide();
-                    $('#message').html(data);
-                }
-            });
-
-        });
-
-        $('#file').change(function() {
-
-            $('#message').empty();
-
-            var file = this.files[0];
-            var match = ["image/jpeg", "image/png", "image/jpg"];
-
-            if ( !( (file.type == match[0]) || (file.type == match[1]) || (file.type == match[2]) ) )
-            {
-                noPreview();
-
-                $('#message').html('<div class="alert alert-warning" role="alert">Invalid image format. Allowed formats: JPG, JPEG, PNG.</div>');
-
-                return false;
-            }
-
-            if ( file.size > maxsize )
-            {
-                noPreview();
-
-                $('#message').html('<div class=\"alert alert-danger\" role=\"alert\">The size of image you are attempting to upload is ' + (file.size/1024).toFixed(2) + ' KB, maximum size allowed is ' + (maxsize/1024).toFixed(2) + ' KB</div>');
-
-                return false;
-            }
-
-            $('#upload-button').removeAttr("disabled");
-
-
-            var reader = new FileReader();
-            reader.onload = selectImage;
-            reader.readAsDataURL(this.files[0]);
-
-        });
-
-    });
-</script>

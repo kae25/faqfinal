@@ -13,18 +13,19 @@
     <script type=”text/javascript” src=”js/bootstrap-filestyle.min.js”> </script>
     <script>
 
+
         function noPreview() {
             $('#image-preview-div').css("display", "none");
             $('#preview-img').attr('src', 'noimage');
             $('upload-button').attr('disabled', '');
-        }
+        };
 
         function selectImage(e) {
             $('#file').css("color", "green");
             $('#image-preview-div').css("display", "block");
             $('#preview-img').attr('src', e.target.result);
             $('#preview-img').css('max-width', '550px');
-        }
+        };
 
         $(document).ready(function (e) {
 
@@ -42,10 +43,11 @@
                 $.ajax({
                     url: "upload-image.php",
                     type: "POST",
-                    data: new FormData(this),
+                    data: new FormData(),
                     contentType: false,
                     cache: false,
                     processData: false,
+
                     success: function(data)
                     {
                         $('#loading').hide();
@@ -61,6 +63,8 @@
 
                 var file = this.files[0];
                 var match = ["image/jpeg", "image/png", "image/jpg"];
+
+
 
                 if ( !( (file.type == match[0]) || (file.type == match[1]) || (file.type == match[2]) ) )
                 {
@@ -89,8 +93,9 @@
 
             });
 
-        });
 
+
+        });
 
     </script>
 
