@@ -7,4 +7,6 @@ Profile Picture Upload Feature
 Priority: 8 <br>
 Estimate: 1 <br>
 <br>
+3. Users have the option to vote up or down on an answer to a question.
+    - This can be done either when viewing the questions+answers or when just viewing the individual answers.
 Heroku Link: https://faqis601final.herokuapp.com/
